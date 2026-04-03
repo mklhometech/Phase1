@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MKL Hometech Pvt. Ltd. – Shiv Shakti Dham</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#fff; color:#1a1a1a; font-family:'Poppins',sans-serif; min-height:100vh; }
+
+  .top-stripe { height:6px; background:linear-gradient(90deg,#C8300A,#E63900,#FF6B00,#FF9A00,#FF6B00,#E63900,#C8300A); }
+
+  .header {
+    background:linear-gradient(135deg,#C8300A 0%,#E63900 35%,#FF6B00 70%,#FF9A00 100%);
+    padding:44px 24px 40px; text-align:center; position:relative; overflow:hidden;
+  }
+  .header::before {
+    content:''; position:absolute; inset:0;
+    background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  .company-tag {
+    display:inline-block; background:rgba(255,255,255,0.2); border:1px solid rgba(255,255,255,0.45);
+    color:#fff; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase;
+    padding:5px 20px; border-radius:20px; margin-bottom:14px;
+  }
+  .company-name {
+    font-family:'Playfair Display',serif; font-size:clamp(18px,4vw,26px); font-weight:700;
+    color:#fff; letter-spacing:1px; margin-bottom:4px; text-shadow:0 2px 10px rgba(0,0,0,0.25);
+  }
+  .header-divider { width:60px; height:3px; background:rgba(255,255,255,0.5); margin:14px auto; border-radius:2px; }
+  .project-label { font-size:11px; font-weight:600; letter-spacing:5px; color:rgba(255,255,255,0.8); text-transform:uppercase; margin-bottom:6px; }
+  .project-name {
+    font-family:'Playfair Display',serif; font-size:clamp(34px,9vw,62px); font-weight:900;
+    color:#fff; line-height:1.05; text-shadow:0 4px 20px rgba(0,0,0,0.25); margin-bottom:12px;
+  }
+  .phase-pill { display:inline-block; background:#fff; color:#C8300A; font-size:12px; font-weight:700; letter-spacing:2px; padding:6px 22px; border-radius:20px; }
+
+  .rate-section { background:#FFF7F3; border-bottom:2px solid #FFD5B8; padding:28px 24px; text-align:center; }
+  .price-list-badge {
+    display:inline-block; background:#E63900; color:#fff; font-size:13px; font-weight:700;
+    letter-spacing:3px; text-transform:uppercase; padding:7px 30px; border-radius:4px; margin-bottom:20px;
+  }
+  .rate-label { font-size:11px; font-weight:700; letter-spacing:4px; color:#aaa; text-transform:uppercase; margin-bottom:8px; }
+  .rate-value { font-family:'Playfair Display',serif; font-size:clamp(22px,5vw,34px); font-weight:700; color:#C8300A; }
+  .rate-sub { font-size:12px; color:#888; margin-top:6px; font-weight:500; }
+
+  .content { max-width:760px; margin:0 auto; padding:0 16px 48px; }
+
+  .sec-heading { text-align:center; margin:38px 0 20px; }
+  .sec-heading h2 {
+    font-family:'Playfair Display',serif; font-size:clamp(18px,4vw,24px); font-weight:700;
+    color:#1a1a1a; display:inline-flex; align-items:center; gap:14px;
+  }
+  .sec-heading h2::before,.sec-heading h2::after {
+    content:''; display:inline-block; width:44px; height:2px;
+    background:linear-gradient(90deg,#FF6B00,#C8300A); border-radius:2px;
+  }
+
+  .table-wrap { border-radius:12px; overflow:hidden; box-shadow:0 4px 28px rgba(200,48,10,0.13),0 1px 4px rgba(0,0,0,0.06); border:1px solid #FFCCAA; }
+  table { width:100%; border-collapse:collapse; }
+  thead tr { background:linear-gradient(90deg,#C8300A,#FF6B00); }
+  thead th { font-size:11px; font-weight:700; letter-spacing:2.5px; color:#fff; text-transform:uppercase; padding:16px 18px; text-align:center; }
+  thead th:first-child { width:68px; }
+  tbody tr { background:#fff; transition:background 0.2s; }
+  tbody tr:nth-child(even) { background:#FFF8F5; }
+  tbody tr:hover { background:#FFEEE6; }
+  tbody td { padding:18px 18px; text-align:center; border-bottom:1px solid #FFE0CC; font-size:14px; font-weight:500; color:#333; vertical-align:middle; line-height:1.5; }
+  tbody tr:last-child td { border-bottom:none; }
+
+  .sr-num { font-family:'Playfair Display',serif; font-size:26px; font-weight:700; color:#FF6B00; }
+  .pct { font-family:'Playfair Display',serif; font-size:21px; font-weight:700; color:#C8300A; display:block; }
+  .pct-sub { font-size:11px; color:#888; font-weight:500; letter-spacing:0.4px; }
+  .period-pill {
+    display:inline-block; background:linear-gradient(135deg,#FFF2EC,#FFE0CC);
+    border:1px solid #FFB899; color:#A02800; font-size:12px; font-weight:600; padding:6px 16px; border-radius:20px;
+  }
+
+  .plot-section { margin:36px 0; text-align:center; }
+  .plot-box {
+    display:inline-block; background:linear-gradient(135deg,#C8300A,#FF6B00,#FF9A00);
+    color:#fff; border-radius:50px; padding:18px 52px;
+    box-shadow:0 8px 28px rgba(200,48,10,0.35);
+  }
+  .plot-label { font-size:10px; font-weight:700; letter-spacing:4px; text-transform:uppercase; opacity:0.85; margin-bottom:5px; }
+  .plot-value { font-family:'Playfair Display',serif; font-size:clamp(20px,4vw,28px); font-weight:700; }
+
+  .terms-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:14px; margin:24px 0; }
+  .term-card {
+    background:#fff; border:1px solid #FFCDB5; border-radius:10px; padding:18px 16px;
+    display:flex; gap:14px; align-items:flex-start;
+    transition:box-shadow 0.2s,transform 0.2s;
+  }
+  .term-card:hover { box-shadow:0 6px 22px rgba(200,48,10,0.13); transform:translateY(-2px); }
+  .term-icon {
+    width:38px; height:38px; background:linear-gradient(135deg,#C8300A,#FF9A00);
+    border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:17px; flex-shrink:0;
+  }
+  .term-title { font-size:13px; font-weight:700; color:#1a1a1a; margin-bottom:4px; }
+  .term-desc { font-size:12px; color:#666; line-height:1.65; }
+
+  .address-section { text-align:center; margin:36px 0 8px; }
+  .address-card {
+    display:inline-block; background:#fff; border:2px solid #FF6B00; border-radius:14px;
+    padding:28px 40px; max-width:480px; width:100%;
+    box-shadow:0 8px 32px rgba(200,48,10,0.1); position:relative;
+  }
+  .address-card::before {
+    content:''; position:absolute; top:-2px; left:50px; right:50px; height:4px;
+    background:linear-gradient(90deg,#C8300A,#FF9A00); border-radius:0 0 4px 4px;
+  }
+  .addr-icon {
+    width:50px; height:50px; background:linear-gradient(135deg,#C8300A,#FF9A00);
+    border-radius:50%; display:flex; align-items:center; justify-content:center;
+    font-size:22px; margin:0 auto 14px; box-shadow:0 4px 14px rgba(200,48,10,0.35);
+  }
+  .addr-company { font-family:'Playfair Display',serif; font-size:16px; font-weight:700; color:#C8300A; margin-bottom:10px; }
+  .addr-text { font-size:14px; color:#444; line-height:1.9; font-weight:500; }
+
+  .footer {
+    background:linear-gradient(135deg,#C8300A,#E63900,#FF6B00);
+    padding:16px 24px; text-align:center; color:rgba(255,255,255,0.9);
+    font-size:12px; font-weight:500; letter-spacing:1px;
+  }
+
+  @media (max-width:500px) {
+    .plot-box { padding:14px 24px; }
+    .address-card { padding:22px 18px; }
+    thead th,tbody td { padding:12px 8px; font-size:13px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-stripe"></div>
+
+<div class="header">
+  <div class="company-tag">RERA Registered Project</div>
+  <div class="company-name">MKL HOMETECH PVT. LTD.</div>
+  <div class="header-divider"></div>
+  <div class="project-label">Presenting</div>
+  <div class="project-name">Shiv Shakti Dham</div>
+  <div class="phase-pill">PHASE 1</div>
+</div>
+
+<div class="rate-section">
+  <div class="price-list-badge">Price List</div>
+  <div class="rate-label">Base Rate</div>
+  <div class="rate-value">₹15,499 &ndash; ₹17,499 &nbsp;/- Per Sq. Yd.</div>
+  <div class="rate-sub">Prices vary based on plot size &amp; location preference</div>
+</div>
+
+<div class="content">
+
+  <div class="sec-heading"><h2>Payment Plan</h2></div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>S.No</th><th>Installment</th><th>Installment Period</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="sr-num">1</span></td>
+          <td><span class="pct">10%</span><span class="pct-sub">of Basic Cost</span></td>
+          <td><span class="period-pill">On Booking</span></td>
+        </tr>
+        <tr>
+          <td><span class="sr-num">2</span></td>
+          <td><span class="pct">20%</span><span class="pct-sub">of Basic Cost on Agreement</span></td>
+          <td><span class="period-pill">Within 30 Days of Booking</span></td>
+        </tr>
+        <tr>
+          <td><span class="sr-num">3</span></td>
+          <td><span class="pct">20%</span><span class="pct-sub">of Basic Cost</span></td>
+          <td><span class="period-pill">Within 90 Days of Booking</span></td>
+        </tr>
+        <tr>
+          <td><span class="sr-num">4</span></td>
+          <td><span class="pct">20%</span><span class="pct-sub">of Basic Cost</span></td>
+          <td><span class="period-pill">Within 135 Days of Booking</span></td>
+        </tr>
+        <tr>
+          <td><span class="sr-num">5</span></td>
+          <td><span class="pct">30%</span><span class="pct-sub">of Basic Cost on Registry</span></td>
+          <td><span class="period-pill">Within 180 Days of Booking</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="plot-section">
+    <div class="plot-box">
+      <div class="plot-label">Available Plot Sizes</div>
+      <div class="plot-value">100 Sq. Yd. &nbsp;&mdash;&nbsp; 900 Sq. Yd.</div>
+    </div>
+  </div>
+
+  <div class="sec-heading"><h2>Terms &amp; Conditions</h2></div>
+
+  <div class="terms-grid">
+    <div class="term-card">
+      <div class="term-icon">🏗️</div>
+      <div>
+        <div class="term-title">No Development Charge</div>
+        <div class="term-desc">Development charges are not applicable on this project.</div>
+      </div>
+    </div>
+    <div class="term-card">
+      <div class="term-icon">📋</div>
+      <div>
+        <div class="term-title">Additional Charges</div>
+        <div class="term-desc">Registry, Stamp Duty &amp; Mutation charges will be levied extra as per actuals.</div>
+      </div>
+    </div>
+    <div class="term-card">
+      <div class="term-icon">🏦</div>
+      <div>
+        <div class="term-title">Cheque in Favour of</div>
+        <div class="term-desc">All cheques / DDs to be made in favour of <strong>MKL HOMETECH PVT. LTD.</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-heading"><h2>Our Office</h2></div>
+
+  <div class="address-section">
+    <div class="address-card">
+      <div class="addr-icon">📍</div>
+      <div class="addr-company">MKL HOMETECH PVT. LTD.</div>
+      <div class="addr-text">
+        A-27, Sector-63A, Noida<br>
+        Dist. Gautam Buddha Nagar<br>
+        Uttar Pradesh &ndash; 201301
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  &copy; MKL Hometech Pvt. Ltd. &nbsp;|&nbsp; Shiv Shakti Dham Phase 1 &nbsp;|&nbsp; All Rights Reserved
+</div>
+
+</body>
+</html>
